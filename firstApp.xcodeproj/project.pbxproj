@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		552DFA3E1EBA80FC0058D31F /* DataKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFA3D1EBA80FC0058D31F /* DataKeeper.m */; };
 		55B0EF971EAC96FF001C06DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B0EF961EAC96FF001C06DB /* main.m */; };
 		55B0EF9A1EAC96FF001C06DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B0EF991EAC96FF001C06DB /* AppDelegate.m */; };
 		55B0EF9D1EAC96FF001C06DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B0EF9C1EAC96FF001C06DB /* ViewController.m */; };
@@ -36,8 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		552DFA3C1EBA80FC0058D31F /* DataKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataKeeper.h; sourceTree = "<group>"; };
-		552DFA3D1EBA80FC0058D31F /* DataKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataKeeper.m; sourceTree = "<group>"; };
 		55B0EF921EAC96FF001C06DB /* firstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B0EF961EAC96FF001C06DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55B0EF981EAC96FF001C06DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,8 +110,6 @@
 				55B0EFA31EAC96FF001C06DB /* LaunchScreen.storyboard */,
 				55B0EFA61EAC96FF001C06DB /* Info.plist */,
 				55B0EF951EAC96FF001C06DB /* Supporting Files */,
-				552DFA3C1EBA80FC0058D31F /* DataKeeper.h */,
-				552DFA3D1EBA80FC0058D31F /* DataKeeper.m */,
 			);
 			path = firstApp;
 			sourceTree = "<group>";
@@ -279,7 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B0EF9D1EAC96FF001C06DB /* ViewController.m in Sources */,
-				552DFA3E1EBA80FC0058D31F /* DataKeeper.m in Sources */,
 				55B0EF9A1EAC96FF001C06DB /* AppDelegate.m in Sources */,
 				55B0EF971EAC96FF001C06DB /* main.m in Sources */,
 			);
@@ -432,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				INFOPLIST_FILE = firstApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.firstApp;
@@ -443,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				INFOPLIST_FILE = firstApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.firstApp;

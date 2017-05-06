@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
--(void) addButton:(UIButton*) sender;
--(void) playAction;
+- (void) addComponents;
+- (void) addString: (UIButton*) sender;
+- (void) sortMethod: (UIButton*) sender;
 @end
 
