@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "DataKeeper.h"
 
 @interface ViewController (){
-    UITextField *textField;
-}
-@property (retain) NSMutableArray* data;
+   }
+@property (retain, nonatomic) NSMutableArray* data;
+@property (retain, nonatomic) IBOutlet UITextField *textField1;
+@property (retain, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -47,17 +47,17 @@
     
     
     //Текстовые поля
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 150, 30)];
-    [label setText:@"Введите слово:"];
-    [label setBackgroundColor:[UIColor blueColor]];
-    [label setTextColor:[UIColor blackColor]];
-    [self.view addSubview:label];
+    _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 150, 30)];
+    [_label setText:@"Введите слово:"];
+    [_label setBackgroundColor:[UIColor blueColor]];
+    [_label setTextColor:[UIColor blackColor]];
+    [self.view addSubview:_label];
 
-    textField = [[UITextField alloc] initWithFrame:CGRectMake(200, 200, 200, 30)];
-    [textField setBorderStyle:UITextBorderStyleRoundedRect];
-    [textField setBackgroundColor:[UIColor whiteColor]];
-    [textField setText:@""];
-    [self.view addSubview:textField];
+    _textField1 = [[UITextField alloc] initWithFrame:CGRectMake(200, 200, 200, 30)];
+    [_textField1 setBorderStyle:UITextBorderStyleRoundedRect];
+    [_textField1 setBackgroundColor:[UIColor whiteColor]];
+    [_textField1 setText:@""];
+    [self.view addSubview:_textField1];
     
     
     ///создание кнопки
@@ -75,18 +75,18 @@
 - (void) addString:(UIButton*) sender{
     if(_data == nil)//Если массив  еще не создан
         _data = [[NSMutableArray alloc] init];//
-    [_data addObject:textField.text];//Добавление элемента в массив
+    [_data addObject:_textField1.text];//Добавление элемента в массив
     
     
 }
 
-//сортировка массива
+//Сoбытие, сортировка массива
 - (void) sortMethod: (UIButton*) sender{
     NSArray *sortedArray = [_data sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     for(NSString *string in sortedArray){
-        @autoreleasepool {// правильно ли так?
-            NSLog(@"%@",string);
-        }
+        NSLog(@"%@",string);
+        [string release];
+
     }
     //? почему нельзя так делать?
    // [sortedArray release];// попытка уничтожение массива не увенчалась успехом
@@ -94,7 +94,13 @@
     
 }
 
-
+- (void) dealloc{
+    [_data release];
+    [_textField1 release];
+    [_label release];
+    
+    [super dealloc];
+}
 
 @end
     
